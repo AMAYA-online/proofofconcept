@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Media Index</title>
+<style>
+  body { font-family: -apple-system, sans-serif; max-width: 600px; margin: 40px auto; padding: 0 20px; color: #333; }
+  h1 { font-size: 1.4em; }
+  ul { list-style: none; padding: 0; }
+  li { padding: 14px 0; border-bottom: 1px solid #eee; }
+  a { color: #06c; text-decoration: none; font-weight: 600; }
+  .desc { display: block; color: #666; font-size: 0.9em; margin-top: 4px; }
+</style>
+</head>
+<body>
+  <h1>Book Media Index</h1>
+  <p>If a code in the book didn't work, find the matching chapter below.</p>
+  <ul id="list"></ul>
+
+<script>
+fetch('media-links.json')
+  .then(r => r.json())
+  .then(data => {
+    const list = document.getElementById('list');
+    for (const [code, entry] of Object.entries(data)) {
+      if (code.startsWith('_')) continue;
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="${entry.primary}">${entry.description || code}</a><span class="desc">${code}</span>`;
+      list.appendChild(li);
+    }
+  });
+</script>
+</body>
+</html>
+To use this: select all the text above, copy it, paste it into GitHub's "Create new file" box with the filename media.html, then commit.
+Want me to paste archive-backup.html next?
