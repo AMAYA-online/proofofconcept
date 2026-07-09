@@ -15,5 +15,10 @@
     "primary": "https://vimeo.com/REPLACE_WITH_YOUR_VIMEO_ID",
     "backup": "https://archive.org/details/REPLACE_WITH_YOUR_ARCHIVE_ID",
     "description": "Chapter 3 - Demonstration video"
+  },
+  "art-xicano-border": {
+    "primary": "https://web.archive.org/web/20030203045705/http://xicano.com/border/home",
+    "backup": "",
+    "description": "HTML art piece - xicano.com/border (sole surviving copy)"
   }
 }
